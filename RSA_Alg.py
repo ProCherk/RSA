@@ -1,3 +1,9 @@
+'''
+Македонський Богдан 125А
+Лабораторна Робота №1
+RSA
+'''
+
 import sympy
 
 flag_p = 1
@@ -11,7 +17,7 @@ while flag_p:  # Перевірка числа р на простоту
 
 flag_q = 1
 while flag_q:  # Перевірка числа q на простоту
-    q = int(input("Введіть друге просте число(р) - "))
+    q = int(input("Введіть друге просте число(q) - "))
     a = sympy.isprime(q)
     if a:
         flag_q = 0
@@ -56,13 +62,16 @@ letters = 'абвгґдеєжзиіїйклмнопрстуфхцчшщьюя'
 
 # Шифрування
 coded_message = []
+let_num_mass = []
 
 for i in range(len(let_name)):  # Шифрування повідомлення
     let_id = letters.index(let_name[i])
     let_id += 1
+    let_num_mass.append(let_id)
     code_num = let_id**e % n
     coded_message.append(code_num)
 
+print("Введене ім'я у цифровому записі - ", let_num_mass)
 print("Зашифроване повідомлення ", coded_message)
 
 # Дешифрування
