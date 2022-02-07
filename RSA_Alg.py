@@ -1,8 +1,8 @@
-'''
+"""
 Македонський Богдан 125А
 Лабораторна Робота №1
 RSA
-'''
+"""
 
 import sympy
 
@@ -40,7 +40,6 @@ while flag_e:  # Перевірка числа e на простоту
     else:
         print(f"Число e - {e} не є простим, введіть нове число")
 
-
 for i in range(2, 1000000000):  # Пошук d яке б задовольняло ф-цію (e * d) * mod(f(n)) = 1
     if i * e % fn == 1:
         d = i
@@ -51,12 +50,10 @@ print(f"d - {d}")
 print(f"Відкритий ключ - ({e},{n})")
 print(f"Закритий ключ - ({d},{n})")
 
-
 name = input("Введіть своє ім\'я - ")
 name = name.lower()
 let_name = ' '.join(name)
 let_name = let_name.split(" ")
-
 
 letters = 'абвгґдеєжзиіїйклмнопрстуфхцчшщьюя'
 
@@ -68,7 +65,7 @@ for i in range(len(let_name)):  # Шифрування повідомлення
     let_id = letters.index(let_name[i])
     let_id += 1
     let_num_mass.append(let_id)
-    code_num = let_id**e % n
+    code_num = let_id ** e % n
     coded_message.append(code_num)
 
 print("Введене ім'я у цифровому записі - ", let_num_mass)
@@ -79,7 +76,7 @@ print("Зашифроване повідомлення ", coded_message)
 decoded_message = []
 
 for i in coded_message:  # Розшифрування повідомлення
-    decoded_num = i**d % n
+    decoded_num = i ** d % n
     decoded_message.append(decoded_num)
 
 print("Розшифроване повідомлення ", decoded_message)
